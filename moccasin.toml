@@ -3,8 +3,11 @@ src = "src"
 out = "out"
 dot_env = ".env"
 
-[networks.pyevm]
-is_zksync = false
+[networks.contracts.price_feed]
+deployer_script = "scripts/deploy_mocks.py" 
+
+[networks.pyevm.contracts.price_feed]
+deployer_script = "script/deploy_mocks.py"
 
 [networks.anvil]
 url = "http://127.0.0.1:8545"
@@ -21,5 +24,7 @@ url = "https://sepolia.era.zksync.dev"
 chain_id = 300
 is_zksync = true
 prompt_live = true
+
+
 
 # You can view all configuration options at https://cyfrin.github.io/moccasin/all_moccasin_toml_parameters.html
